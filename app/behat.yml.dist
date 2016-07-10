@@ -1,0 +1,12 @@
+default:
+    formatters:
+        pretty:
+            verbose: true
+            paths: false
+            snippets: false
+
+    extensions: []
+
+    gherkin:
+        filters:
+            tags: ""

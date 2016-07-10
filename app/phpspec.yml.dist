@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Symm\App
+        psr4_prefix: Symm\App
+
