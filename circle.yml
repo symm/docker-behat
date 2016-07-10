@@ -1,0 +1,11 @@
+machine:
+    services:
+        - docker
+
+dependencies:
+    pre:
+        - docker build -t symm/hello:$CIRCLE_SHA1 .
+
+test:
+    post:
+        - docker run symm/hello vendor/bin/behat
