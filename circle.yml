@@ -5,9 +5,11 @@ machine:
         - docker
 
 dependencies:
+    cache_directories:
+        - "~/docker"
     pre:
         - docker build -t symm/hello:$CIRCLE_SHA1 .
 
 test:
     post:
-        - docker run symm/hello vendor/bin/behat
+        - docker run -d symm/hello:$CIRCLE_SHA1 vendor/bin/behat
