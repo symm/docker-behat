@@ -9,9 +9,8 @@ dependencies:
         - "~/docker"
         - ~/.composer/cache
     pre:
-        - cd app && composer install
-        - docker build -t symm/hello:$CIRCLE_SHA1 .
+        - make build
 
 test:
     post:
-        - docker run symm/hello:$CIRCLE_SHA1 vendor/bin/behat
+        - make test
