@@ -7,7 +7,9 @@ machine:
 dependencies:
     cache_directories:
         - "~/docker"
+        - ~/.composer/cache
     pre:
+        - cd app && composer install
         - docker build -t symm/hello:$CIRCLE_SHA1 .
 
 test:
