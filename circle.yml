@@ -12,4 +12,4 @@ dependencies:
 
 test:
     post:
-        - docker run -d symm/hello:$CIRCLE_SHA1 vendor/bin/behat
+        - docker run symm/hello:$CIRCLE_SHA1 vendor/bin/behat
