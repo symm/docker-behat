@@ -3,7 +3,10 @@ PROJECT = "symm/hello"
 
 build:
 	cd app && composer install --prefer-dist --optimize-autoloader
-test:
+test: phpspec behat
+phpspec:
+	cd app && bin/phpspec run
+behat:
 	cd app && bin/behat
 docker-build:
 	cd app && composer install --prefer-dist --optimize-autoloader
