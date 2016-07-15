@@ -9,8 +9,8 @@ dependencies:
         - "~/docker"
         - ~/.composer/cache
     pre:
-        - make build
+        - make docker-build
 
 test:
     post:
-        - make test
+        - make docker-test
